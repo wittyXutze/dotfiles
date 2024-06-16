@@ -1,0 +1,8 @@
+layout {
+    tab // a tab with a single pane
+    tab name="my third tab" split_direction="vertical" {
+        // a tab with a name and two vertical panes
+        pane
+        pane
+    }
+}
