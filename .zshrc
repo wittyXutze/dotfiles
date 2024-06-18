@@ -218,3 +218,6 @@ export PROMPT=$PROMPT$(project_cfg_status)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #eval "$(atuin init zsh)"
+eval "$(oh-my-posh init zsh)"
+
+
