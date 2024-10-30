@@ -1,0 +1,48 @@
+# zsh aliases
+
+setopt AUTO_CD
+
+# programming things
+alias ma='make clean;clear;make all -j4'
+alias mu='make clean;clear;make uf2'
+#alias b='make bossa'
+alias b='bossac -o 0x2000 -e -w -b -R flash.bin'
+alias p='make edbg'
+alias ru='make report_defines|sort | egrep USE_'
+alias re='make report_defines|sort | egrep EN_'
+
+# set pathes
+#export wsFolder="/mnt/sdb2/new"
+export wsFolder="new"
+
+alias ws='$wsFolder'
+alias ebike='f() { $wsFolder/eBike/SensorNode/gcc };f'
+alias i2c='f() { $wsFolder/examples/i2c-test/gcc };f'
+alias ms50='f() { $wsFolder/Muehle_Glashuette/nim-ms50-rs485/gcc };f'
+alias tcs='f() { $wsFolder/Muehle_Glashuette/TCS-2_Interface/gcc };f'
+alias wie='$wsFolder/WIE'
+alias ho='$wsFolder/esphome'
+
+alias pcb='cd /mnt/sdb1/Leiterplatten'
+#alias Leiterplatten=/mnt/sdb1/Leiterplatten
+alias new='cd new'
+alias msf='cd /mnt/$ATMEL_PROJECTS/msf'
+
+alias xyz='nmap -n -sn 192.168.11.0/24 -oG - | awk "'"/Up$/{print $2}"'"'
+      rxvt='urxvt -fg '"'"'#111111'"'"' -bg '"'"'#111111'"'"
+
+alias zshrc='code ~/.zshrc'
+alias source_zsh='source ~/.zshrc'
+
+alias OS='uname -r'
+alias welcheversion='lsb_release -d && uname -r'
+
+alias gp='git pull'
+alias gc='git clone '
+alias lg='lazygit'
+
+alias pacsear="pacman -Slq | sk --multi --preview 'pacman -Si {1}'"
+alias pacsearin="pacman -Slq | sk --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias yasear="yay -Slq | sk --multi --preview 'yay -Si {1}'"
+alias yasearin="yay -Slq | sk --multi --preview 'yay -Si {1}' | xargs -rp yay -S"
+

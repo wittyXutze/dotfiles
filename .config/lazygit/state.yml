@@ -1,0 +1,15 @@
+lastupdatecheck: 0
+recentrepos:
+    - /home/withold/dotfiles
+startuppopupversion: 5
+lastversion: 0.44.1
+customcommandshistory:
+    - git fetch
+hidecommandlog: true
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+renamesimilaritythreshold: 50
+localbranchsortorder: alphabetical
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
