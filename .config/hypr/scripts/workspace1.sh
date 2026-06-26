@@ -1,25 +1,14 @@
 #!/bin/bash
-# Workspace 1: kitty links + Brave rechts
-# Effektive Auflösung: 3072x1728, waybar 32px, gaps 10px
-
-hyprctl dispatch workspace 1
-
-if ! hyprctl clients -j | grep -q '"class": "kitty"'; then
-    kitty &
-    sleep 1
-fi
-
-if ! hyprctl clients -j | grep -q '"class": "brave-browser"'; then
-    brave &
-    sleep 2
-fi
-
-hyprctl dispatch focuswindow class:kitty
-hyprctl dispatch setfloating
-hyprctl dispatch resizewindowpixel exact 1517 1672,class:kitty
-hyprctl dispatch movewindowpixel exact 12 44,class:kitty
-
-hyprctl dispatch focuswindow class:brave-browser
-hyprctl dispatch setfloating
-hyprctl dispatch resizewindowpixel exact 1517 1672,class:brave-browser
-hyprctl dispatch movewindowpixel exact 1543 44,class:brave-browser
+WS=1
+hyprctl clients -j | python3 -c "
+import json,sys
+for x in json.load(sys.stdin):
+    if x['workspace']['id']==$WS: print(x['address'])
+" | while read addr; do
+    hyprctl dispatch closewindow address:$addr
+done
+sleep 0.5
+hyprctl dispatch workspace $WS
+hyprctl dispatch exec "[workspace $WS silent; float; size 1517 1672; move 12 44] kitty"
+sleep 0.5
+hyprctl dispatch exec "[workspace $WS silent; float; size 1517 1672; move 1543 44] brave"
