@@ -7,7 +7,7 @@ on_force_close "quit"
 default_shell "zsh"
 pane_frames true
 auto_layout true
-session_serialization true
+session_serialization false
 serialize_pane_viewport true
 scrollback_lines_to_serialize 10000
 scroll_buffer_size 10000
@@ -415,3 +415,5 @@ plugins {
 // Default: false
 //
 // disable_session_metadata true
+
+

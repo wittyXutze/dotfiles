@@ -1,15 +1,19 @@
 lastupdatecheck: 0
 recentrepos:
-    - /home/withold/dotfiles
+    - /home/withold/Dokumente/clients/ebara/IFBS/IFBS_hal_wie_2025_102_ifb_smart
+    - /home/withold/Dokumente/clients/ebara/IFBS/IFBS_modified_openPLC
+    - /home/withold/Dokumente/clients/ebara/IFBS/IFBS_plc_Uni
+    - /home/withold/Dokumente/clients/ebara/IFBS/IFBS_usb_stick
 startuppopupversion: 5
-lastversion: 0.44.1
-customcommandshistory:
-    - git fetch
-hidecommandlog: true
-ignorewhitespaceindiffview: false
-diffcontextsize: 3
-renamesimilaritythreshold: 50
-localbranchsortorder: alphabetical
-remotebranchsortorder: alphabetical
-gitlogorder: topo-order
-gitlogshowgraph: always
+didshowhunkstaginghint: false
+lastversion: 0.62.2
+customcommandshistory: []
+hidecommandlog: false
+githubPullRequests:
+    /home/withold/Dokumente/clients/ebara/IFBS/IFBS_hal_wie_2025_102_ifb_smart: []
+    /home/withold/Dokumente/clients/ebara/IFBS/IFBS_modified_openPLC: []
+    /home/withold/Dokumente/clients/ebara/IFBS/IFBS_plc_Uni: []
+    /home/withold/Dokumente/clients/ebara/IFBS/IFBS_usb_stick: []
+    /home/withold/Dokumente/ebara/IFBS/IFBS_hal_wie_2025_102_ifb_smart: []
+    /home/withold/Dokumente/ebara/IFBS/IFBS_hal_wie_2025_105_keyswitch_rgb: []
+    /home/withold/Dokumente/ebara/IFBS/IFBS_modified_openPLC: []

@@ -1,0 +1,63 @@
+layout {
+    cwd "/home/withold/Dokumente/Projects/zigbee"
+    tab name="home" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="/home/withold"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="h2 / c6 sensor" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="HA_temperature_sensor" command="bash" {
+            args "-c" "source /opt/esp-idf/export.sh; exec zsh"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="water" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="water_meter" command="bash" {
+            args "-c" "source /opt/esp-idf/export.sh; exec zsh"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="programmer" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="programmer" {
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="zigbee2mqtt" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="/mnt/homeassistant/config" {
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    new_tab_template {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="/home/withold/Dokumente/Projects/zigbee"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+}

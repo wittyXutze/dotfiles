@@ -23,19 +23,8 @@ fi
 
 export PATH=$PATH:~/.platformio/penv/bin
 
-export PCB=/mnt/sdb1/Leiterplatten
-
+export PCB=/home/withold/Leiterplatten
 export KICAD_CONFIG_HOME=$PCB/KiCAD_env
-export KICAD_ENV=$KICAD_CONFIG_HOME
-export KIGITHUB=https://github.com/KiCad
-
-export KICAD_TEMPLATE_DIR=$KICAD_CONFIG_HOME/WIE/frames
-export KICAD_USER_TEMPLATE_DIR=$KICAD_CONFIG_HOME/WIE/Templates
-
-export WIE_FOOTPRINTS=$KICAD_CONFIG_HOME/WIE/footprints/
-export WIE_FRAMES=$KICAD_CONFIG_HOME/WIE/frames
-export WIE_STEPMODELS=$KICAD_CONFIG_HOME/WIE/Stepmodels
-export WIE_SYMBOLS=$KICAD_CONFIG_HOME/WIE/symbols
 
 /usr/bin/setxkbmap -layout de
 #/usr/bin/setxkbmap -option caps:escape
@@ -43,3 +32,7 @@ export WIE_SYMBOLS=$KICAD_CONFIG_HOME/WIE/symbols
 
 # Make Caps Lock an additional Esc and both Shift Keys toggle Caps Lock
 setxkbmap -option caps:escape,shift:both_capslock &
+export DOTNET_ROOT="$HOME/dotnet"
+export PATH="$HOME/dotnet:$PATH"
+export DOTNET_ROOT="$HOME/dotnet"
+export PATH="$HOME/dotnet:$PATH"

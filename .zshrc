@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 fpath=($HOME/completion_zsh $fpath)
 #fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -11,9 +11,9 @@ fpath=($HOME/completion_zsh $fpath)
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="bira"
 ZSH_THEME="bira"
-ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -67,8 +67,10 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+#   autojump
+
 plugins=(
-  autojump
   git
   fasd 
   wd
@@ -87,7 +89,7 @@ wd() {
 # autojump
 ########
 #[[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
-[[ -s /home/withold/.autojump/etc/profile.d/autojump.sh ]] && source /home/withold/.autojump/etc/profile.d/autojump.sh
+#[[ -s /home/withold/.autojump/etc/profile.d/autojump.sh ]] && source /home/withold/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 source $ZSH/oh-my-zsh.sh
@@ -126,9 +128,10 @@ source $ZSH/oh-my-zsh.sh
 autoload -Uz promptinit
 promptinit
 
+source ~/dotfiles/.profile
 . ~/.zsh_aliases
 
-source $ZSH/plugins/zsh-git-prompt/zshrc.sh
+#source $ZSH/plugins/zsh-git-prompt/zshrc.sh
 
 #PROMPT='%B%F{cyan}.%b%F{cyan}-%B%F{black}(%B%F{green}%~%B%F{black})%b%F{cyan}------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%B%F{black}(%b%F{cyan}%n%B%F{cyan}@%b%F{cyan}%m%B%F{black})%b%F{cyan}-%}%B%F{cyan}\`$(git_super_status) -%b%F{cyan}-%B%F{white}%B%F{white}%(!.#.>) %b%f%k' 
 #PROMPT='%B%m%~%b$(git_super_status) %# '
@@ -174,6 +177,9 @@ export VSMSF="/mnt/projects/msf"
 #export PATH=/opt/gcc-arm-none-eabi-9-2019-q4-major/bin:$PATH
 #export PATH=/opt/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin:$PATH
 
+export PATH=/home/withold/.local/bin:$PATH
+
+
 # setopt auto_pushd
 # setopt pushd_ignore_dups
 
@@ -182,8 +188,7 @@ source /usr/share/fzf/key-bindings.zsh
 
 export PATH=$PATH:~/.cargo/bin
 
-source ~/bin/z/z.sh
-
+# source ~/bin/z/z.sh
 
 if type exa 2>/dev/null; then
    alias ls='exa'
@@ -213,11 +218,84 @@ function project_cfg_status() {
         echo "$STATUS"
     fi
 }
-export PROMPT=$PROMPT$(project_cfg_status)
+
+
+export PCB=/home/withold/Leiterplatten
+export KICAD_CONFIG_HOME=$PCB/KiCAD_env
+export KICAD_ENV=$KICAD_CONFIG_HOME
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#eval "$(atuin init zsh)"
 eval "$(oh-my-posh init zsh)"
 
+export WINECFG_DPI=140
 
+source /home/withold/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="/opt/OpenPLC_Editor/matiec:$PATH"
+
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH
+export TEXMFDIST=/usr/local/texlive/2025/texmf-dist
+
+# In ~/.bashrc oder ~/.zshrc einfügen
+ZJ_LAYOUT_DIR="${ZELLIJ_LAYOUT_DIR:-$HOME/.config/zellij/layouts}"
+
+zjsave() {
+  local dir="$ZJ_LAYOUT_DIR"
+  mkdir -p "$dir" || return 1
+  local name="${1:-layout_$(date +%Y-%m-%d_%H-%M-%S)}"
+  local path="$dir/${name%.kdl}.kdl"
+  zellij action dump-layout > "$path" && echo "Saved → $path"
+}
+
+# (optional) schnell laden + auflisten:
+zjload() { local name="${1:?Usage: zjload <name|path>}"; [ -f "$name" ] && zellij -l "$name" || zellij -l "${name%.kdl}"; }
+zjlist() { ls -1 "$ZJ_LAYOUT_DIR"/*.kdl 2>/dev/null | sed 's#.*/##;s#\.kdl$##'; }
+
+alias treed='tree -L 2 -a -I ".git|.gitignore|.gitmodules" --dirsfirst'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# source /opt/esp-idf/export.sh > /dev/null 2>&1
+
+alias get_idf='source /opt/esp-idf/export.sh >/dev/null 2>&1'alias idf_off='deactivate'
+alias idf_off='deactivate'
+alias mon1="ddcutil setvcp 60 0x11 --bus 0"
+alias mon2="ddcutil setvcp 60 0x12 --bus 0"
+DEFAULT_USER="nobody"
+PROMPT="%n@%m %~ %# "
+
+# Force prompt after all other hooks
+precmd_functions+=(set_my_prompt)
+set_my_prompt() {
+    PROMPT="╭─%B%{$fg[green]%}%n@%m%{$reset_color%} %B%{$fg[blue]%}%~ %{$reset_color%}
+╰─%B%(!.#.$)%b "
+}
+eval "$(zoxide init zsh)"
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+# ─────────────────────────────────────────────
+# IFBS Entwicklungsumgebung
+# ─────────────────────────────────────────────
+export IFBS_ROOT="$HOME/Dokumente/clients/ebara/IFBS"
+export IFBS_STICK="$IFBS_ROOT/IFBS_usb_stick/IFBS"
+export PATH="$IFBS_STICK:$PATH"
+
+# ifbs + stage: direkt als Scripts in IFBS/ (./ifbs, ./stage)
+# kein Alias nötig — Scripts erkennen Pfade automatisch
+
+alias private-docs='cd ~/Dokumente/mkdocs && source venv/bin/activate && mkdocs serve --dev-addr 127.0.0.1:8001'
+alias ifbs-docs='cd ~/Dokumente/clients/ebara/IFBS/IFBS_online_docs && source .venv/bin/activate && mkdocs serve'
+alias ifbs-pdf='cd ~/Dokumente/clients/ebara/IFBS/IFBS_online_docs && source .venv/bin/activate && ENABLE_PDF_EXPORT=1 mkdocs build && echo PDF: $(pwd)/site/pdf/IFBS_Dokumentation.pdf'

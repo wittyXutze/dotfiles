@@ -1,0 +1,128 @@
+layout {
+    cwd "/home/withold"
+    tab name="home" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane contents_file="initial_contents_1"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="usb stick" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/clients/ebara/IFBS/IFBS_usb_stick" contents_file="initial_contents_2" {
+            
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="hal ifb" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/clients/ebara/IFBS/IFBS_hal_wie_2025_102_ifb_smart" contents_file="initial_contents_3" {
+            
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="hal rgb" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/clients/ebara/IFBS/IFBS_hal_wie_2025_105_keyswitch_rgb" contents_file="initial_contents_4" {
+            
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="core" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/clients/ebara/IFBS/IFBS_modified_openPLC" contents_file="initial_contents_5" {
+            
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="Amat" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/clients/ebara/IFBS/IFBS_plc_AMAT" contents_file="initial_contents_6" {
+            
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="Uni" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/clients/ebara/IFBS/IFBS_plc_Uni" contents_file="initial_contents_7" {
+            
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="Lam" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/clients/ebara/IFBS/IFBS_plc_Lam" contents_file="initial_contents_8" {
+            
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="mb-moni" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+
+        pane cwd="/home/withold/Dokumente/clients/ebara/IFBS/mb-moni" {
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="esp32 prog" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="/home/withold/Dokumente/clients/ebara/IFBS/IFBS_usb_stick" contents_file="initial_contents_10"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="aane rs232" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="/home/withold/Dokumente/clients/ebara/IFBS/IFBS_modified_openPLC/docu" contents_file="initial_contents_11"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    new_tab_template {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="/home/withold"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+}
+

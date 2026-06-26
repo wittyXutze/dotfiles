@@ -1,0 +1,40 @@
+layout {
+    cwd "/home/withold"
+    tab name="home" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane contents_file="initial_contents_1"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="ds18b20" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/esphome/ds18b20_multi_bus" contents_file="initial_contents_2"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="esphome" hide_floating_panes=true {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="Dokumente/esphome" contents_file="initial_contents_3"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    new_tab_template {
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane cwd="/home/withold"
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+}
+
